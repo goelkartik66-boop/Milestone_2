@@ -15,7 +15,7 @@ html = """
 </head>
 <body>
     <h2>Enter Text:</h2>
-    <form method="post" action="/predict_ui">
+    <form method="post" action="/">
         <input type="text" name="text" style="width:300px;">
         <button type="submit">Predict</button>
     </form>
@@ -28,7 +28,7 @@ html = """
 def home():
     return render_template_string(html)
 
-@app.route("/predict_ui", methods=["POST"])
+@app.route("/", methods=["POST"])
 def predict_ui():
     text = request.form["text"]
     vec = vectorizer.transform([text])
@@ -55,7 +55,7 @@ html = """
 </head>
 <body>
     <h2>Enter Text:</h2>
-    <form method="post" action="/predict_ui">
+    <form method="post" action="/">
         <input type="text" name="text" style="width:300px;">
         <button type="submit">Predict</button>
     </form>
@@ -68,7 +68,7 @@ html = """
 def home():
     return render_template_string(html)
 
-@app.route("/predict_ui", methods=["POST"])
+@app.route("/", methods=["POST"])
 def predict_ui():
     text = request.form["text"]
     vec = vectorizer.transform([text])
